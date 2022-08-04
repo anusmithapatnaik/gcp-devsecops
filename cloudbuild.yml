@@ -19,7 +19,7 @@ steps:
           mvn snyk:test -fn 
     id: SCA Scan using Snyk in GCP DevSecOps Pipeline
 
-#Run DAST scan using OWASP ZAP in GCP DevSecOps Pipeline
+#Run DAST scan using OWASP ZAP in GCP DevSecOps Pipelines
   - name: 'ubuntu'
     entrypoint: bash
     args: 

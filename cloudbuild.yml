@@ -41,8 +41,3 @@ artifacts:
     location: 'gs://anusmithapatnaik'
     paths:
       - zap_report.html
-      #Execute SAST Scan using ASOC in GCP DevSecOps Pipeline
-  - name: HCLAPPSCANONCLOUD
-    entrypoint: appsectestservice
-    args: [applications: '98af4fb0-5410-4a2d-a2f0-5b14c2d966a8,'scantype:'static',keyid:'fa135074-6037-995a-dd3a-b6e3b2a5603d',keysecret:'9+CwlJZxGKe8JT6FuEFlNobptZlk6WnUM3fyHrEXes8=']
-    id: SAST Scan using SonarCloud in GCP DevSecOps Pipeline

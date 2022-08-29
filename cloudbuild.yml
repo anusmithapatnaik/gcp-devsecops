@@ -1,6 +1,6 @@
 steps: 
 
-#Execute SAST Scan using SonarCloud in GCP DevSecOps Pipeline
+#Execute SAST Scan using SonarCloud in GCP DevSecOps Pipelines devsecops
   - name: maven:3-jdk-11
     entrypoint: mvn
     args: ['verify', 'sonar:sonar','-Dsonar.host.url=https://sonarcloud.io','-Dsonar.organization=gcpsourcecode','-Dsonar.projectKey=gcpvulprojectkey','-Dsonar.login=${_SONAR_TOKEN}']

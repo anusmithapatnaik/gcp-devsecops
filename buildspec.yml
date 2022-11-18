@@ -1,7 +1,7 @@
 version: 0.1
 env:
     secrets-manager:
-      TOKEN: prod/sonar:LOGIN
+      TOKEN: prod/secret:LOGIN
     variables:
       JAVA_HOME: "/usr/lib/jvm/java-17-amazon-corretto/"  
 phases:

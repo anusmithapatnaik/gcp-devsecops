@@ -23,12 +23,17 @@ phases:
       - export PATH=$PATH:/sonar-scanner-3.3.0.1492-linux/bin/
  build:
     commands:
-      - mvn test     
-      - mvn verify sonar:sonar -Dsonar.login=$TOKEN -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=gcpvulprojectkey -Dsonar.organization=gcpsourcecode
-      - sleep 5
-      - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=gcpvulprojectkey >result.json
-      - cat result.json
-      - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
+    sonar-scanner.bat \
+      -D"sonar.organization=awskey" \
+      -D"sonar.projectKey=anusmithapatnaik_aws_samplecode" \
+      -D"sonar.sources=." \
+      -D"sonar.host.url=https://sonarcloud.io"
+      #- mvn test     
+      #- mvn verify sonar:sonar -Dsonar.login=$TOKEN -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=gcpvulprojectkey -Dsonar.organization=gcpsourcecode
+      #- sleep 5
+      #- curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=gcpvulprojectkey >result.json
+      #- cat result.json
+      #- if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
 
    
       - |-

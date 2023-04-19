@@ -1,4 +1,4 @@
-#buildspec.yml
+#buildspec.yml for AWS
 version: 0.1
 env:
     secrets-manager:
@@ -8,7 +8,7 @@ env:
 phases:
  install:
         commands:
-            #- apt-get update; apt-get install -y java-17-amazon-corretto-jdk
+            - apt-get update; apt-get install -y java-17-amazon-corretto-jdk
             - update-alternatives --auto javac
             - update-alternatives --auto java
 

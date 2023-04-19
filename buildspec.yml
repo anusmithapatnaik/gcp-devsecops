@@ -25,7 +25,8 @@ phases:
  build:
     commands:
       - mvn test     
-      - mvn verify sonar:sonar -Dsonar.login=$TOKEN -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=gcpvulprojectkey -Dsonar.organization=gcpsourcecode
+      #- mvn verify sonar:sonar -Dsonar.login=$TOKEN -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=gcpvulprojectkey -Dsonar.organization=gcpsourcecode
+      - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=gcpvulprojectkey -Dsonar.organization=gcpsourcecode
       - sleep 5
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=gcpvulprojectkey >result.json
       - cat result.json

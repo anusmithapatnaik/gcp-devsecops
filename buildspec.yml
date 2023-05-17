@@ -33,11 +33,11 @@ phases:
       - if [ $(jq -r '.projectStatus.status' result.json) = ERROR ] ; then $CODEBUILD_BUILD_SUCCEEDING -eq 0 ;fi
       
       - |-
-      apt-get update
-      apt-get -y install maven 
-      SNYK_TOKEN=9e20a81b-00ce-4a0c-9b83-eaf080ee5412
-      export SNYK_TOKEN
-      mvn snyk:test -fn 
+        apt-get update
+        apt-get -y install maven 
+        SNYK_TOKEN=9e20a81b-00ce-4a0c-9b83-eaf080ee5412
+        export SNYK_TOKEN
+        mvn snyk:test -fn 
 
    
       - |-

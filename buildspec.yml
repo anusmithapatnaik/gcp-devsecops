@@ -54,10 +54,10 @@ phases:
 
         # Evaluate the quality gate
       - if [[ ${high_risk_alerts} -gt 0 ]]; then
-      - echo "Quality gate failed. High-risk alerts found."
-      - else
-      - echo "Quality gate passed. No high-risk alerts found."
-      - fi
+        echo "Quality gate failed. High-risk alerts found."
+        else
+        echo "Quality gate passed. No high-risk alerts found."
+        fi
         
      
 artifacts:

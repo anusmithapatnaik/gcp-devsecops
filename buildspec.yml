@@ -42,18 +42,19 @@ phases:
         tar -xvf ZAP_2.11.1_Linux.tar.gz
         cd ZAP_2.11.1
         ./zap.sh -cmd -quickurl https://demo.testfire.net/ -quickprogress -quickout ../zap_report.html 
+        # Parse the report and check for high-risk alerts
+      - high_risk_alerts=$(grep -c "High" report.html)
+
+        # Evaluate the quality gate
+      - if [[ ${high_risk_alerts} -gt 0 ]]; then
+      - echo "Quality gate failed. High-risk alerts found."
+      - else
+      - echo "Quality gate passed. No high-risk alerts found."
+      - fi
         
      
 artifacts:
   files:
     - zap_report.html      
     #success
-   # Parse the report and check for high-risk alerts
-    - high_risk_alerts=$(grep -c "High" report.html)
-
-        # Evaluate the quality gate
-    - if [[ ${high_risk_alerts} -gt 0 ]]; then
-    - echo "Quality gate failed. High-risk alerts found."
-    - else
-    - echo "Quality gate passed. No high-risk alerts found."
-    - fi
+   

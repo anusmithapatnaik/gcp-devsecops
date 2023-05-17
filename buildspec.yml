@@ -46,7 +46,7 @@ phases:
         # Parse the report and check for high-risk alerts
         high_risk_alerts=$(grep -c "High" report.html)
 
-# Evaluate the quality gate
+        # Evaluate the quality gate
         if [[ ${high_risk_alerts} -gt 0 ]]; then
         echo "Quality gate failed. High-risk alerts found."
         else

@@ -69,7 +69,7 @@
               </plugin>
 
 <!--# Changes for Software Composition Analysis Scan using Snyk
-    #By ASecurityGuru
+    #By ASecurityGuru, asecurityguru
     #5/12/2022 11:14 AM IST
 -->
         <plugin>
